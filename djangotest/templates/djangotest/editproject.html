@@ -1,0 +1,17 @@
+{% extends 'djangotest/basic.html' %}
+{% block body %}
+
+<h4>Edit page</h4>
+
+<div class="row">
+    <div class="col-sm-8 offset-2">
+        <h4 class="alert alert-info">Update Information</h4>
+        <form action="" method="post"> {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-success">Update</button>
+            <a href="{% url 'index' %}" class="btn btn-info">Home</a>
+        </form>
+    </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,16 @@
+{% extends 'djangotest/basic.html' %}
+{% block body %}
+
+<div class="container my-4">
+<div class="col-sm-4">
+    <h4 class="text-center alert alert-info">Add New Project</h4>
+    <form action="" method="POST">{% csrf_token %}
+  <div class="mb-3">
+      {{form.as_p}}
+  </div>
+  <button class="btn btn-primary alert alert-primary my-4" type="submit">Add</button> <a href="{% url 'index' %}" class="btn btn-success alert alert-success my-4" type="button">Home</a>
+</form>
+</div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,1 @@
+web: gunicorn ApurvaSakle.wsgi --log-file -

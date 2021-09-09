@@ -1,0 +1,10 @@
+{% extends 'djangotest/basic.html' %}
+{% block body %}
+
+<div class="container my-4">
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="{% url 'addproject' %}" class="btn btn-primary btn-lg alert alert-primary my-4" type="button">Create New Project</a>
+        <a href="{% url 'show' %}" class="btn btn-info btn-lg alert alert-info" type="button">View All Projects</a>
+</div>
+</div>
+{% endblock body %}

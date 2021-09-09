@@ -1,0 +1,41 @@
+{% extends 'djangotest/basic.html' %}
+{% block body %}
+
+<div class="container mt-4 text-center">
+        <h4 class="text-center alert alert-info">All Projects</h4>
+    <table class="table">
+  <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Start_Date</th>
+        <th scope="col">End_Date</th>
+        <th scope="col">Value in Dollar</th>
+        <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for d in alldata %}
+            <tr>
+              <th scope="row">{{d.id}}</th>
+              <td>{{d.name}}</td>
+              <td>{{d.start_date}}</td>
+              <td>{{d.end_date}}</td>
+              <td>{{d.value}}</td>
+              <td>
+                  <a href="{% url 'editdata' d.id %}" class="btn btn-warning alert alert-warning btn-sm">Edit</a>
+
+                  <form action="{% url 'deletedata' d.id %}" method="post" class="d-inline"> {% csrf_token %}
+                       <button type="submit" class="btn btn-danger alert alert-danger btn-sm">Delete</button>
+                  </form>
+
+              </td>
+            </tr>
+          {% endfor %}
+  </tbody>
+</table>
+
+        <a href="{% url 'index' %}" class="btn btn-success alert alert-success my-4" type="button">Home</a>
+    </div>
+
+{% endblock body %}
